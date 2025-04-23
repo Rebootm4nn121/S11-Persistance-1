@@ -16,7 +16,10 @@ public class MeilleurScoreTemps : MonoBehaviour
         _jeu = GetComponent<MiniJeu>();
 
         meilleurScore = PlayerPrefs.GetFloat("meilleurScore", 0f);
-        textMeilleurScore.text = "Meilleur score : " + meilleurScore.ToString("00.00");
+        string nom = PlayerPrefs.GetString("nomJoueur", "N/A");
+
+
+        textMeilleurScore.text = "Meilleur score " + nom + "=" + meilleurScore.ToString("00.00");
     }
 
     private void Update()
